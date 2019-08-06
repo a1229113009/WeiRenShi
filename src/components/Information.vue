@@ -7,7 +7,7 @@
 				</el-col>
 				<el-col :span="4">
 					<div class="grid-content bg-purple" style="color: white; font-size: 14px;">
-						<i class="el-icon-bell" style="font-size: 18px; color: #333333; margin-left: 110px;"></i><i style="padding-left: 30px;font-style:normal">系统管理员</i>
+						<i class="el-icon-bell" style="font-size: 18px; color: #333333; margin-left: 50px;"></i><i style="padding-left: 30px;font-style:normal">系统管理员</i>
 						<span style="display: flex; align-items: center; float: right;">
   					<i><img src="../../build/download.jpg" style="width: 40px;height: 40px;border-radius: 40px;margin-top: 10px; margin-right: 15px;"></i>
 						</span>
@@ -58,7 +58,7 @@
 							<el-menu-item index="/Information">基础信息设置</el-menu-item>
 							<el-menu-item index="5-2">系统管理</el-menu-item>
 							<el-menu-item index="5-3">操作日志管理</el-menu-item>
-							<el-menu-item index="5-4">操作员管理</el-menu-item>
+							<el-menu-item index="/Operators">操作员管理</el-menu-item>
 							<el-menu-item index="5-5">备份恢复数据库</el-menu-item>
 							<el-menu-item index="5-6">初始化数据库</el-menu-item>
 						</el-menu-item-group>
@@ -67,7 +67,7 @@
 			</el-aside>
 			<el-main>
 				<el-breadcrumb separator-class="el-icon-arrow-right" style="margin-bottom: 10px;">
-					<el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+					<el-breadcrumb-item :to="{ path: '/HelloWorld' }">首页</el-breadcrumb-item>
 					<el-breadcrumb-item v-text="this.$router.currentRoute.name"></el-breadcrumb-item>
 				</el-breadcrumb>
 				<el-tabs v-model="activeName2" type="card" @tab-click="handleClick">
@@ -130,7 +130,7 @@
 								<template slot="prepend">ROLE_</template>
 							</el-input>
 							<el-input placeholder="请输入角色中文名称..." style="width: 250px;height: 47px;font-size: 11px;float: left;margin-left: 5px;margin-top: -3px;"></el-input>
-							<el-button type="primary" icon="el-icon-plus" style="float: right;font-size: 11px;margin-left: 5px;float: left;" size="small">添加角色</el-button>
+							<el-button type="primary" icon="el-icon-plus" style="font-size: 11px;margin-left: 10px;float: left;" size="small">添加角色</el-button>
 						</div>
 						<el-collapse v-model="activeName" accordion style="padding-top: 50px;width: 30%;">
 							<el-collapse-item title="部门经理" name="1">
@@ -143,6 +143,10 @@
 										<el-tree :data="data2" show-checkbox node-key="id" :default-checked-keys="[1]" :props="defaultProps">
 										</el-tree>
 									</div>
+									<div>
+										<el-button type="primary" style="float: right;font-size: 11px;margin-left: 5px;" size="small">取消修改</el-button>
+										<el-button style="float: right;font-size: 11px;margin-bottom: 20px;" size="small">确认修改</el-button>
+									</div>
 								</el-card>
 							</el-collapse-item>
 							<el-collapse-item title="人事专员" name="2">
@@ -152,7 +156,12 @@
 										<el-button class="el-icon-delete" style="float: right; padding: 3px 0;color: red;" type="text"></el-button>
 									</div>
 									<div>
-
+										<el-tree :data="data2" show-checkbox node-key="id" :default-checked-keys="[1]" :props="defaultProps">
+										</el-tree>
+									</div>
+									<div>
+										<el-button type="primary" style="float: right;font-size: 11px;margin-left: 5px;" size="small">取消修改</el-button>
+										<el-button style="float: right;font-size: 11px;margin-bottom: 20px;" size="small">确认修改</el-button>
 									</div>
 								</el-card>
 							</el-collapse-item>
@@ -163,7 +172,12 @@
 										<el-button class="el-icon-delete" style="float: right; padding: 3px 0;color: red;" type="text"></el-button>
 									</div>
 									<div>
-
+										<el-tree :data="data2" show-checkbox node-key="id" :default-checked-keys="[1]" :props="defaultProps">
+										</el-tree>
+									</div>
+									<div>
+										<el-button type="primary" style="float: right;font-size: 11px;margin-left: 5px;" size="small">取消修改</el-button>
+										<el-button style="float: right;font-size: 11px;margin-bottom: 20px;" size="small">确认修改</el-button>
 									</div>
 								</el-card>
 							</el-collapse-item>
@@ -174,7 +188,12 @@
 										<el-button class="el-icon-delete" style="float: right; padding: 3px 0;color: red;" type="text"></el-button>
 									</div>
 									<div>
-
+										<el-tree :data="data2" show-checkbox node-key="id" :default-checked-keys="[1]" :props="defaultProps">
+										</el-tree>
+									</div>
+									<div>
+										<el-button type="primary" style="float: right;font-size: 11px;margin-left: 5px;" size="small">取消修改</el-button>
+										<el-button style="float: right;font-size: 11px;margin-bottom: 20px;" size="small">确认修改</el-button>
 									</div>
 								</el-card>
 							</el-collapse-item>
@@ -185,7 +204,12 @@
 										<el-button class="el-icon-delete" style="float: right; padding: 3px 0;color: red;" type="text"></el-button>
 									</div>
 									<div>
-
+										<el-tree :data="data2" show-checkbox node-key="id" :default-checked-keys="[1]" :props="defaultProps">
+										</el-tree>
+									</div>
+									<div>
+										<el-button type="primary" style="float: right;font-size: 11px;margin-left: 5px;" size="small">取消修改</el-button>
+										<el-button style="float: right;font-size: 11px;margin-bottom: 20px;" size="small">确认修改</el-button>
 									</div>
 								</el-card>
 							</el-collapse-item>
@@ -196,7 +220,12 @@
 										<el-button class="el-icon-delete" style="float: right; padding: 3px 0;color: red;" type="text"></el-button>
 									</div>
 									<div>
-
+										<el-tree :data="data2" show-checkbox node-key="id" :default-checked-keys="[1]" :props="defaultProps">
+										</el-tree>
+									</div>
+									<div>
+										<el-button type="primary" style="float: right;font-size: 11px;margin-left: 5px;" size="small">取消修改</el-button>
+										<el-button style="float: right;font-size: 11px;margin-bottom: 20px;" size="small">确认修改</el-button>
 									</div>
 								</el-card>
 							</el-collapse-item>
@@ -207,7 +236,12 @@
 										<el-button class="el-icon-delete" style="float: right; padding: 3px 0;color: red;" type="text"></el-button>
 									</div>
 									<div>
-
+										<el-tree :data="data2" show-checkbox node-key="id" :default-checked-keys="[1]" :props="defaultProps">
+										</el-tree>
+									</div>
+									<div>
+										<el-button type="primary" style="float: right;font-size: 11px;margin-left: 5px;" size="small">取消修改</el-button>
+										<el-button style="float: right;font-size: 11px;margin-bottom: 20px;" size="small">确认修改</el-button>
 									</div>
 								</el-card>
 							</el-collapse-item>
@@ -431,85 +465,110 @@
 					id: 1,
 					label: '所有',
 					children: [{
-						id: 2,
-						label: '员工资料',
-						children: [{
-							id: 7,
-							label: '基本资料'
-						}]
-					},
-					{
-						id: 3,
-						label: '人事管理',
-						children: [{
-							id: 8,
-							label: '员工奖惩'
+							id: 2,
+							label: '员工资料',
+							children: [{
+								id: 7,
+								label: '基本资料'
+							}]
 						},
 						{
-							id: 9,
-							label: '员工培训'
+							id: 3,
+							label: '人事管理',
+							children: [{
+									id: 8,
+									label: '员工奖惩'
+								},
+								{
+									id: 9,
+									label: '员工培训'
+								},
+								{
+									id: 10,
+									label: '员工调薪'
+								},
+								{
+									id: 11,
+									label: '员工调动'
+								}
+							]
 						},
 						{
-							id: 10,
-							label: '员工调薪'
+							id: 4,
+							label: '薪资管理',
+							children: [{
+									id: 12,
+									label: '工资账套管理'
+								},
+								{
+									id: 13,
+									label: '员工账套设置'
+								},
+								{
+									id: 14,
+									label: '工资表管理'
+								},
+								{
+									id: 15,
+									label: '月末处理'
+								},
+								{
+									id: 16,
+									label: '工资表查询'
+								}
+							]
 						},
 						{
-							id: 11,
-							label: '员工调动'
-						}]
-					},
-					{
-						id: 4,
-						label: '薪资管理',
-						children: [{
-							id: 12,
-							label: '工资账套管理'
+							id: 5,
+							label: '统计管理',
+							children: [{
+									id: 17,
+									label: '综合信息统计'
+								},
+								{
+									id: 18,
+									label: '员工积分统计'
+								},
+								{
+									id: 19,
+									label: '人事信息统计'
+								},
+								{
+									id: 20,
+									label: '人事记录统计'
+								}
+							]
 						},
 						{
-							id: 13,
-							label: '员工账套设置'
-						},
-						{
-							id: 14,
-							label: '工资表管理'
-						},
-						{
-							id: 15,
-							label: '月末处理'
-						},
-						{
-							id: 16,
-							label: '工资表查询'
-						}]
-					},
-					{
-						id: 5,
-						label: '统计管理',
-						children: [{
-							id: 17,
-							label: '综合信息统计'
-						},
-						{
-							id: 18,
-							label: '员工积分统计'
-						},
-						{
-							id: 19,
-							label: '人事信息统计'
-						},
-						{
-							id: 20,
-							label: '人事记录统计'
-						}]
-					},
-					{
-						id: 6,
-						label: '系统管理',
-						children: [{
-							id: 21,
-							label: '基础信息设置'
-						}]
-					}]
+							id: 6,
+							label: '系统管理',
+							children: [{
+									id: 21,
+									label: '基础信息设置'
+								},
+								{
+									id: 22,
+									label: '系统管理'
+								},
+								{
+									id: 23,
+									label: '操作日志管理'
+								},
+								{
+									id: 24,
+									label: '操作员管理'
+								},
+								{
+									id: 25,
+									label: '备份恢复数据库'
+								},
+								{
+									id: 26,
+									label: '初始化数据库'
+								}
+							]
+						}
+					]
 				}],
 				defaultProps: {
 					children: 'children',

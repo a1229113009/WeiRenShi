@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import index from '@/components/index'
 import jiben from '@/components/jiben'
 import employees from '@/components/employees'
 import training from '@/components/training'
@@ -8,15 +8,18 @@ import management from '@/components/management'
 import setting from '@/components/setting'
 import scale from '@/components/scale'
 import Information from '@/components/Information'
+import Operators from '@/components/Operators'
+import dlu from '@/components/dlu'
+
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/index',
       name: '主页',
-      component: HelloWorld
+      component:index
     },
 		{
 			path:'/jiben',
@@ -52,6 +55,16 @@ export default new Router({
 			path:'/Information',
 			name:'基础信息设置',
 			component:Information
+		},
+		{
+			path:'/Operators',
+			name:'操作员管理',
+			component:Operators
+		},
+		{
+			path:'/',
+			name:'登录',
+			component:dlu
 		}
   ]
 })
